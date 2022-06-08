@@ -13,17 +13,6 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
 .App-link {
   color: #61dafb;
 }
@@ -35,6 +24,25 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+h2{
+  margin-top: 5px;
+}
+
+figure{
+  width: 25px;
+  height: 25px;
+  border-radius: 100px;
+  overflow: hidden;
+  margin: 0;
+}
+
+img{
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
 }
 
 .draggable-wrapper{
@@ -56,4 +64,37 @@
   margin-bottom: 8px;
   border-radius: 8px;
   user-select: none;
+  font-weight: 600;
+  color: #303030;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.draggable-area{
+  width: 100%;
+  border-radius: 4px;
+}
+
+.draggable-item-batch{
+  display: flex;
+  justify-content: space-between;
+}
+
+.draggable-item-batch span{
+  padding: 4px 6px;
+  border-radius: 8px;
+  font-size: 10px;
+  margin-top: 8px;
+  text-transform: capitalize;
+  margin-right: 5px;
+}
+
+.frontend, .backend{
+  background: rgb(250, 235, 215);
+}
+
+.sprint1{
+  background: #74c273;
+  color: #FFFFFF;
 }

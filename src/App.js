@@ -2,7 +2,7 @@ import IssuesComponent from "./issues";
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <IssuesComponent />
     </div>
   );

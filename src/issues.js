@@ -1,14 +1,46 @@
 import React, { useState } from "react";
 import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
 import { v4 as uuid } from "uuid";
+import user1 from './user1.jpeg';
+import user2 from './user2.jpeg';
 import './App.css';
 
 const itemsFromBackend = [
-  { id: uuid(), content: "First task" },
-  { id: uuid(), content: "Second task" },
-  { id: uuid(), content: "Third task" },
-  { id: uuid(), content: "Fourth task" },
-  { id: uuid(), content: "Fifth task" },
+  {
+    id: uuid(),
+    content: "First task",
+    type: "frontend",
+    sprint: "sprint1",
+    assignee: user1,
+  },
+  {
+    id: uuid(),
+    content: "Second task",
+    type: "frontend",
+    sprint: "sprint1",
+    assignee: user1,
+  },
+  {
+    id: uuid(),
+    content: "Third task",
+    type: "backend",
+    sprint: "sprint1",
+    assignee: user2,
+  },
+  {
+    id: uuid(),
+    content: "Fourth task",
+    type: "frontend",
+    sprint: "sprint1",
+    assignee: user1,
+  },
+  {
+    id: uuid(),
+    content: "Fifth task",
+    type: "backend",
+    sprint: "sprint1",
+    assignee: user2,
+  },
 ];
 
 const availableColumns = {
@@ -81,16 +113,15 @@ function IssuesComponent () {
                       <div
                         {...provided.droppableProps}
                         ref={provided.innerRef}
+                        className="draggable-area"
                         style={{
                           background: snapshot.isDraggingOver
                             ? "lightblue"
-                            : "lightgrey",
-                          padding: 4,
-                          width: 250,
+                            : "#F0F0F0",
                           minHeight: 500,
                         }}
                       >
-                        {column.items.map((item, index) => {
+                        {column?.items?.map((item, index) => {
                           return (
                             <Draggable
                               key={item.id}
@@ -103,19 +134,35 @@ function IssuesComponent () {
                                     ref={provided.innerRef}
                                     {...provided.draggableProps}
                                     {...provided.dragHandleProps}
+                                    className="draggable-item"
                                     style={{
-                                      userSelect: "none",
-                                      padding: 16,
-                                      margin: "0 0 8px 0",
-                                      minHeight: "50px",
                                       backgroundColor: snapshot.isDragging
-                                        ? "#263B4A"
-                                        : "#456C86",
-                                      color: "white",
+                                        ? "#F0F0F0"
+                                        : "#FFFFFF",
                                       ...provided.draggableProps.style,
                                     }}
                                   >
-                                    {item.content}
+                                    <div>
+                                      <div>{item?.content}</div>
+                                      <div className="draggable-item-batch">
+                                        <span className={item?.type}>
+                                          {item?.type}
+                                        </span>
+                                        <span className={item?.sprint}>
+                                          {item?.sprint}
+                                        </span>
+                                      </div>
+                                    </div>
+
+                                    <div>
+                                      <figure>
+                                        <img
+                                          src={item?.assignee}
+                                          alt="assignee"
+                                        />
+                                      </figure>
+                                    </div>
+                                    
                                   </div>
                                 );
                               }}
