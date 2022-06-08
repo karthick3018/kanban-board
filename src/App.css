@@ -36,3 +36,24 @@
     transform: rotate(360deg);
   }
 }
+
+.draggable-wrapper{
+  display: flex;
+}
+
+.draggable-column{
+  margin-right: 10px;
+  background: #F0F0F0;
+  overflow: scroll;
+  max-width: 300px;
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 8px;
+}
+
+.draggable-item{
+  padding: 16px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  user-select: none;
+}
