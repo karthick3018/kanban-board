@@ -1,3 +1,7 @@
+*{
+  box-sizing: border-box;
+}
+
 .App {
   text-align: center;
 }
@@ -45,6 +49,25 @@ img{
   object-position: center;
 }
 
+input{
+  padding: 8px 10px;
+  font-size: 14px;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  border: 1px solid darkgrey;
+  width: 100%;
+}
+
+header{
+  margin: 0px 5px;
+}
+
+.content-wrapper{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
 .draggable-wrapper{
   display: flex;
 }
@@ -52,11 +75,11 @@ img{
 .draggable-column{
   margin-right: 10px;
   background: #F0F0F0;
-  overflow: scroll;
-  max-width: 300px;
+  max-width: 400px;
   width: 100%;
   padding: 8px 10px;
   border-radius: 8px;
+  height: calc(100vh - 150px);
 }
 
 .draggable-item{
@@ -71,9 +94,15 @@ img{
   align-items: center;
 }
 
+.draggable-area-wrapper{
+  height: calc(100vh - 250px);
+  overflow: scroll;
+}
+
 .draggable-area{
   width: 100%;
   border-radius: 4px;
+  min-height: calc(100vh - 250px);
 }
 
 .draggable-item-batch{
@@ -98,3 +127,53 @@ img{
   background: #74c273;
   color: #FFFFFF;
 }
+
+.header-actions-wrapper{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-actions-left{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-actions-left p {
+  margin-right: 10px;
+  padding: 8px 12px;
+  border: 1px solid #292961;
+  border-radius: 4px;
+}
+
+.header-actions-left p:hover{
+  cursor: pointer;
+}
+
+.header-actions-right{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.header-actions-right button {
+  margin-left: 10px;
+  padding: 8px 12px;
+  border-radius: 4px;
+  background: #74c273;
+  color: #FFFFFF;
+  border: 1px solid #74c273
+}
+
+.header-actions-right button:hover{
+  cursor: pointer;
+}
+
+.header-actions-right button.import{
+  background: #D4EFEC;
+  color: #0C9485;
+  border: 1px solid #D4EFEC
+}
+
